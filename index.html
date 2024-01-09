@@ -7,115 +7,88 @@
       /* 👉 Task 1- Apply the reset found on this page: https://www.joshwcomeau.com/css/custom-css-reset/ */
     </style>
     <style>
-      /* 👉 Task 2- Target the body element.
-    Apply a font family of Arial to the body element.
-    The font property is inherited by descendant (nested) elements. */
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      /* 👉 Task 3- Target the element with id headerTop.
-    Apply white color to the text, some padding using px or rem units, and a dark background color. */
       #headerTop {
-        color: white;
-        padding: 15px;
+        display: flex;
         background-color: black;
+        height: 70px;
+        align-items: center;
+        box-sizing: border-box;
+        align-content: baseline;
+        /* justify-content: space-evenly; */
       }
-      /* 👉 Task 4- Target the divs that are directly nested underneath the id headerTop.
-    Make them display as inline block, instead of block.
-    This will make them render on the same line. */
-      #headerTop div {
-        display: inline-block;
-      }
-      /* 👉 Task 5- Target the spans that are nested inside the id headerTop.
-    Make them have some margin on the right.
-    This will prevent the spans from crashing against one another. */
-      #headerTop span {
-        margin-right: 10px;
-      }
-      /* 👉 Task 6- Target the first span nested inside the element with id headerTop.
-    Make it have a font weight of bold, and transform the text to uppercase. */
-      #headerTop span:first-of-type {
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      /* 👉 Task 7- Target the id headerBottom.
-    Give it a bottom border of 1 pixel, solid gray, and a little bit of padding using px or rem units. */
-      #headerBottom {
-        border-bottom: 1px solid gray;
-        padding: 15px;
-      }
-      /* 👉 Task 8- Target the divs that are nested directly inside the element with id headerBottom.
-    Make them display as inline block, instead of block.
-    This will cause them to render on the same line.
-    You can consolidate this rule with the one on step. 4 */
-      #headerBottom div {
-        display: inline-block;
-      }
-      /* 👉 Task 9- Target the "Compose" button, although note it's a div instead an actual button.
-    Give it color, bold text, background, padding, border radius, margin right, and a cursor of pointer. */
-      #headerBottom div:first-of-type {
+      #headerTop > div:nth-child(1) > span:nth-child(1) {
         color: white;
-        font-weight: bold;
-        background-color: black;
-        padding: 8px;
-        border-radius: 3px;
-        margin-right: 10px;
-        cursor: pointer;
+        font-weight: bolder;
+        font-size: 30px;
+        margin: 8px;
       }
-      /* 👉 Task 10- Research how to remove all the default styling of button elements.
-    Target the button elements inside the element with id headerBottom.
-    Remove all their styling, give them a bit of margin to the right, and a cursor of pointer. */
-      #headerBottom button {
-        background: none;
-        color: inherit;
-        border: none;
-        padding: 0px;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
-        margin-right: 10px;
-        cursor: pointer;
+      #headerTop > div:nth-child(1) > span:nth-child(2) {
+        color: white;
+        margin: 8px;
+        font-size: 30px;
+      }
+      #headerTop > div:nth-child(2) > input {
+        margin: 8px;
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 6px;
       }
 
-      /* 👉 Task 11- Target the button element inside the id headerBottom that has a class of active
-    Make the font weight be bolder, and add a bottom border of 2 pixels solid color (you choose the color).
-    Add the class name to the "All mail" button. */
-      #headerBottom .active {
-        font-weight: bolder;
-        border-bottom: 2px solid black;
+      #headerBottom {
+        display: flex;
+        /* margin: 10px; */
+        border-bottom: 1px solid gray;
       }
-      /* 👉 Task 12- Target all divs directly nested inside elements with a class of email,
-    and make them display as inline-block elements.
-    This will make each email render all its details in the same line*/
-      .email > div {
-        display: inline-block;
-      }
-      /* 👉 Task 13- Target the elements with a class of email.
-    Give them some padding, bigger padding to the left, and a bottom border of very light grey. */
-      .email {
+
+      #headerBottom > div:nth-child(1) {
+        font-size: 20px;
+        color: white;
+        background-color: black;
+        margin: 20px;
+        border: 1px solid black;
         padding: 10px;
-        padding-left: 15px;
-        border-bottom: 1px solid lightgray;
+        border-radius: 6px;
       }
-      /* 👉 Task 14- Target each div inside the element with a class of email.
-    Make the email author and the email subject take 35% of the width of the parent element.
-    Make the check, the date and the size take up 8% of the width of the parent element.
-    This will arrange the details in visible columns. */
-      .email .email-name,
-      .email-subject {
-        width: 35%;
+
+      #headerBottom > div:nth-child(2) {
+        width: 400px;
+        display: flex;
+        justify-content: space-around;
+        font-size: 20px;
+        margin: 20px;
       }
-      .email .email-check,
-      .email-size,
-      .email-date {
-        width: 8%;
+
+      #headerBottom > div:nth-child(2) > button {
+        background: none;
+        border: none;
+        outline: none;
+        box-shadow: none;
       }
-      /* 👉 Task 15- Target the second email and have its font weight be bold.
-    This will make it look "unread". */
-      #emails .email:nth-of-type(2) {
+      #headerBottom > div:nth-child(2) > button.active {
+        font-weight: bolder;
+        border-bottom: 3px solid black;
+        padding: 0px;
+      }
+      #emails {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .email {
+        display: flex;
+        font-size: 20px;
+        border-bottom: 2px solid black ;
+        width: 100%;
+        
+      }
+      .email-check,.email-name,.email-subject {
         font-weight: bold;
+        padding: 10px;
       }
-      /* Well done! Check the design file to make sure you are close enough. */
+      .email-date,.email-size {
+        font-weight: bold;
+        margin-left: 50px;
+      }
     </style>
     <title>Document</title>
   </head>
